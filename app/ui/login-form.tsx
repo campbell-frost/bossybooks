@@ -75,7 +75,7 @@ export default function LoginForm() {
           <div className="flex items-center">
 
             <p>
-              Don't have an account?
+              Dont have an account?
             </p>
           </div>
           <div className="text-sm">
