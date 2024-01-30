@@ -17,7 +17,7 @@ export default async function CustomersPage({
     const query = searchParams?.query || '';
     return (
         <Suspense fallback={<p>Loading...</p>}>
-            <CustomersTable query={query} />
+            <CustomersTableType query={query} />
         </Suspense>
     )
 }
