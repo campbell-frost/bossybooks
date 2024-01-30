@@ -35,7 +35,7 @@ export default function LoginForm() {
           </div>
           <div className="mt-4">
             <label
-              className="mb-3 mt-5 block text-xs font-medium text-gray-900"
+              className="mb-3 mt-5 block text-xs font-medium focus:ring-pink-500 text-gray-900"
               htmlFor="password"
             >
               Password

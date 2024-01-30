@@ -22,7 +22,7 @@ export default function Page() {
           </p>
           <Link
             href="/login"
-            className="flex items-center gap-5 self-start rounded-lg max-w-96 bg-pink-700 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-pink-500 md:text-base"
+            className="flex items-center gap-5 self-start rounded-lg max-w-96 bg-pink-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-pink-700 md:text-base"
           >
             <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6 " />
           </Link>
