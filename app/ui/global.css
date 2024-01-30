@@ -17,6 +17,10 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0;
 }
 
- .max-w-96 {
-   max-width: 350px;
- }
+.max-w-96 {
+  max-width: 350px;
+}
+
+.image {
+  max-width: 300px;
+}
