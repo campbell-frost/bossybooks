@@ -5,8 +5,15 @@ import styles from '@/app/ui/home.module.css';
 import { lusitana } from '@/app/ui/fonts';
 import Image from 'next/image';
 import { inter } from '@/app/ui/fonts'
+import { affirmations } from '@/app/lib/affirmations';
+
+const getRandomAffirmation = () => {
+  const randomIndex = Math.floor(Math.random() * affirmations.length);
+  return affirmations[randomIndex];
+};
 
 export default function Page() {
+  const randomAffirmation = getRandomAffirmation();
   return (
     <main className="flex min-h-screen flex-col p-6">
       <div className="flex h-20 shrink-0 items-end rounded-lg bg-pink-600 p-4 md:h-52">
@@ -17,8 +24,8 @@ export default function Page() {
       </div>
       <div className="">
         <div className="mt-4 grow md:flex-rowflex justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10  md:px-20">
-          <p className={`${inter.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}>
-            <strong>Welcome to Bossy Books.</strong> 
+          <p className={`${inter.className} text-xl text-gray-800 md:text-3xl md:leading-normal mb-5`}>
+            Welcome to<strong> Bossy Books.</strong>
           </p>
           <Link
             href="/login"
@@ -27,7 +34,11 @@ export default function Page() {
             <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6 " />
           </Link>
         </div>
-        
+        <div className="mt-4 grow md:flex-rowflex justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10  md:px-20 mt-4 grow">
+          <p className={`${inter.className} text-xl text-gray-800 md:text-3xl md:leading-normal mb-5`}>
+            {randomAffirmation}
+          </p></div>
+
       </div>
     </main>
   );
