@@ -16,10 +16,11 @@ export default function Page() {
   const randomAffirmation = getRandomAffirmation();
   return (
     <main className="flex min-h-screen flex-col p-6">
-      <div className="flex h-20 shrink-0 items-end rounded-lg bg-pink-600 p-4 md:h-52">
+      <div className="flex  shrink-0 items-end rounded-lg bg-pink-600 p-4 h-52 sm:h-45">
         <img
           src="/BossyBookslogo4.png "
           alt="Bossy Books logo"
+          style={{ minWidth: '100px' }}
         />
       </div>
       <div className="">
