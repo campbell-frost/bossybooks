@@ -38,7 +38,7 @@ const latestInvoices = await fetchLatestInvoices();
                   </div>
                 </div>
                 <p
-                  className={`${lusitana.className} truncate text-sm font-medium md:text-base`}
+                  className={`${inter.className} truncate text-sm font-medium md:text-base`}
                 >
                   {invoice.amount}
                 </p>
