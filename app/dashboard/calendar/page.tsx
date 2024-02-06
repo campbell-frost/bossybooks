@@ -1,7 +1,7 @@
 import { lusitana } from '@/app/ui/fonts';
 
 
-export default function CustomerPage() {
+export default function Page() {
 
     <main>
     <div className="w-full">
