@@ -12,8 +12,8 @@ const users = [
 const customers = [
   {
     id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
-    name: 'Kerri Elwood',
-    email: 'kerri@elwood.com',
+    name: 'Delba Oliveira',
+    email: 'delba@oliveria.com',
     image_url: '/customers/delba-de-oliveira.png',
   },
   {
