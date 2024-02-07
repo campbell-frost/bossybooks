@@ -6,7 +6,7 @@ import { Button } from '@/app/ui/button';
 import { useFormState } from 'react-dom';
 
 
-export default function Form({ customers }: { customers: CustomerField} ){
+export default function AddCustomerForm(){
 
 
 
@@ -35,7 +35,13 @@ return (
       >
         Cancel
       </Link>
-      <Button type="submit">Add customer</Button>
+
 </form>
 );
+}
+function AddCustomerButton(){
+
+    <Button className="mt-4 w-full">
+    Add customer 
+  </Button>
 }
