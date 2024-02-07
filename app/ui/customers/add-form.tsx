@@ -6,7 +6,11 @@ import { Button } from '@/app/ui/button';
 import { useFormState } from 'react-dom';
 
 
+export default function Form(){
 
+
+
+return (
 <form className="w-full max-w-lg">
     <div className="flex-wrap -mx-3 mb-6">
         <div className=" w-full md: w/1/2 px-3 md:mb-0">
@@ -33,3 +37,5 @@ import { useFormState } from 'react-dom';
       </Link>
       <Button type="submit">Add customer</Button>
 </form>
+);
+}
