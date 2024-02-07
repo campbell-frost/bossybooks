@@ -18,8 +18,8 @@ const customers = [
   },
   {
     id: '3958dc9e-742f-4377-85e9-fec4b6a6442a',
-    name: 'Kerri Elwood',
-    email: 'kerri@elwood.com',
+    name: 'Lee Robinson',
+    email: 'lee@robinson.com',
     image_url: '/customers/lee-robinson.png',
   },
   {
