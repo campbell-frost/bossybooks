@@ -1,3 +1,5 @@
+import { Button } from '@/app/ui/button';
+import Link from 'next/link';
 
 <form className="w-full max-w-lg">
   <div className="flex flex-wrap -mx-3 mb-6">
@@ -93,5 +95,13 @@
       </label>
       <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210"/>
     </div>
+    <div className="mt-6 flex justify-end gap-4">
+      <Link
+        href="/dashboard/invoices"
+        className="flex h-10 items-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
+      >
+        Cancel
+      </Link>
+      <Button type="submit">Add customer</Button>
   </div>
 </form>
