@@ -6,7 +6,7 @@ import { Button } from '@/app/ui/button';
 import { useFormState } from 'react-dom';
 
 
-export default function Form(){
+export default function Form({ customers }: { customers: CustomerField} ){
 
 
 
