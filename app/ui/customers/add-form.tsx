@@ -104,4 +104,5 @@ import Link from 'next/link';
       </Link>
       <Button type="submit">Add customer</Button>
   </div>
+  </div>
 </form>
