@@ -94,8 +94,10 @@ export default function LoginForm() {
 
 function LoginButton() {
   return (
-    <Button className="mt-4 w-full">
-      Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
-    </Button>
+    <Link href="dashboard">
+      <Button className="mt-4 w-full">
+        Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+      </Button>
+    </Link>
   );
 }
