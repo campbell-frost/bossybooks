@@ -1,6 +1,6 @@
 import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
 import { fetchCustomers } from '@/app/lib/data';
-import AddCustomerForm from '@/app/ui/invoices/create-form';
+import AddCustomerForm from '@/app/ui/customers/add-form';
 
 
 export default async function Page() {
