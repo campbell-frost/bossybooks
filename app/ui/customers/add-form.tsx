@@ -30,7 +30,12 @@ return (
     </div>
   </div>
   <div className="flex flex-wrap -mx-3 mb-6">
-    <div className="w-full md: w/1/2 px-3 md: mb-0"></div>
+    <div className="w-full md: w/1/2 px-3 md: mb-0">
+    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
+        Email 
+      </label>
+      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none  focus:border-bg-pink-600" id="grid-last-name" type="text" placeholder="Enter email address"/>
+    </div>
     </div>
     <div className="mt-6 flex justify-end gap-4">
     <Link
