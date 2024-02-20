@@ -6,7 +6,7 @@ import { Button } from '@/app/ui/button';
 import { useFormState } from 'react-dom';
 
 
-export default function AddCustomerForm(){
+  export default function AddCustomerForm({customers}: {customers: CustomerField[]}){
 
 
 
