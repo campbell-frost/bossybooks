@@ -32,6 +32,7 @@ return (
   <div className="flex flex-wrap -mx-3 mb-6">
     <div className="w-full md: w/1/2 px-3 md: mb-0"></div>
     </div>
+    <div className="mt-6 flex justify-end gap-4">
     <Link
         href="/dashboard/customers/
         "
@@ -40,7 +41,7 @@ return (
         Cancel
       </Link>
   <Button type="submit">Add Customer </Button>
-  
+  </div>
   </form>
 );
 }
