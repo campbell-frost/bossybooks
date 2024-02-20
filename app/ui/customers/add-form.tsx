@@ -20,7 +20,7 @@ return (
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name"/>
             First Name
             <label/>
-            <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:border-pink-600" id="grid-first-name" type="text" placeholder="Enter first name"></input>
+            <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:border-bg-pink-600" id="grid-first-name" type="text" placeholder="Enter first name"></input>
         </div>
     <div className="w-full md:w-1/2 px-3 md:mb-0">
       <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
