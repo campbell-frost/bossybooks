@@ -17,8 +17,10 @@ export default async function CustomersPage({
 
     const query = searchParams?.query || '';
     return (
+        <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
         <><Suspense fallback={<p>Loading...</p>}>
             <CustomersTableType query={query} />
         </Suspense><AddCustomer /></>
+        </div>
     )
 }
