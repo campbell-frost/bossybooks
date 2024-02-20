@@ -20,13 +20,13 @@ return (
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name"/>
             First Name
             <label/>
-            <input className="appearance-none block w-full pink-200 text-gray-700 border border-gray-200 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Enter first name"></input>
+            <input className="appearance-none block w-full pink-200 text-gray-700 border border-gray-200 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:pink-white" id="grid-first-name" type="text" placeholder="Enter first name"></input>
         </div>
     <div className="w-full md:w-1/2 px-3">
       <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
         Last Name
       </label>
-      <input className="appearance-none block w-full pink-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white" id="grid-last-name" type="text" placeholder="Enter last name"/>
+      <input className="appearance-none block w-full pink-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:pink-white" id="grid-last-name" type="text" placeholder="Enter last name"/>
     </div>
   </div>
   <div className="flex flex-wrap -mx-3 mb-6">
