@@ -1,6 +1,7 @@
 import CustomersTableType from '@/app/ui/customers/table';
 import { Metadata } from 'next';
 import { Suspense } from 'react';
+import { AddCustomer} from '@/app/ui/customers/buttons';
 
 export const metadata: Metadata = {
     title: 'Customers',
@@ -16,8 +17,8 @@ export default async function CustomersPage({
 
     const query = searchParams?.query || '';
     return (
-        <Suspense fallback={<p>Loading...</p>}>
+        <><Suspense fallback={<p>Loading...</p>}>
             <CustomersTableType query={query} />
-        </Suspense>
+        </Suspense><AddCustomer /></>
     )
 }
