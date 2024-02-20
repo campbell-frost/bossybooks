@@ -34,7 +34,7 @@ return (
     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
         Email 
       </label>
-      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none  focus:border-bg-pink-600" id="grid-last-name" type="text" placeholder="Enter email address"/>
+      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none  focus:border-bg-pink-600" id="grid-email" type="text" placeholder="Enter email address"/>
     </div>
     </div>
     <div className="mt-6 flex justify-end gap-4">
