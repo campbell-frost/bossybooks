@@ -27,6 +27,7 @@ export type State = {
     message?: string | null;
 };
 const CreateInvoice = FormSchema.omit({ id: true, date: true });
+const AddCustomer = FormSchema.omit({ id: true, date: true });
 
 export async function createInvoice(prevState: State, formData: FormData) {
     // Validate form using Zod
@@ -112,4 +113,43 @@ export async function deleteInvoice(id: string) {
     } catch (error) {
         return { message: 'Database Error: Failed to Delete Invoice.' };
     }
+}
+
+export async function addCustomer(prevState: State, formData: FormData) {
+    // Validate form using Zod
+    const validatedFields = AddCustomer.safeParse({
+        customerId: formData.get('customerId'),
+        amount: formData.get('amount'),
+        status: formData.get('status'),
+       
+        
+    });
+
+    // If form validation fails, return errors early. Otherwise, continue.
+    if (!validatedFields.success) {
+        return {
+            errors: validatedFields.error.flatten().fieldErrors,
+            message: 'Missing Fields. Failed to Add Customer.',
+        };
+    }
+
+    // Prepare data for insertion into the database
+    const { customerId } = validatedFields.data;
+    
+    // Insert data into the database
+    try {
+        await sql`
+      INSERT INTO customers (name, email, total_paid, total_invoices, total_pending )
+      VALUES (${customerId})
+    `;
+    } catch (error) {
+        // If a database error occurs, return a more specific error.
+        return {
+            message: 'Database Error: Failed to Add Customer.',
+        };
+    }
+
+    // Revalidate the cache for the invoices page and redirect the user.
+    revalidatePath('/dashboard/customers');
+    redirect('/dashboard/customers');
 }

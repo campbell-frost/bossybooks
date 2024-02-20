@@ -4,10 +4,13 @@ import { CustomerField } from '@/app/lib/definitions';
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { useFormState } from 'react-dom';
+import { addCustomer } from '@/app/lib/actions';
 
 
   export default function AddCustomerForm({customers}: {customers: CustomerField[]}){
 
+    const initialState = { message: null, errors: {} };
+  const [state, dispatch] = useFormState(addCustomer, initialState);
 
 
 return (
@@ -30,18 +33,14 @@ return (
     <div className="w-full px-3"></div>
     </div>
     <Link
-        href="/dashboard/customers/add"
+        href="/dashboard/customers/
+        "
         className="flex h-10 items-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
       >
         Cancel
       </Link>
-
-</form>
+  <Button type="submit">Add Customer </Button>
+  
+  </form>
 );
-}
-function AddCustomerButton(){
-
-    <Button className="mt-4 w-full">
-    Add customer 
-  </Button>
 }
