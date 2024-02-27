@@ -17,6 +17,7 @@ const FormSchema = z.object({
         invalid_type_error: 'Please select an invoice status.',
     }),
     date: z.string(),
+    email:z.string(),
 });
 export type State = {
     errors?: {
@@ -134,7 +135,7 @@ export async function addCustomer(prevState: State, formData: FormData) {
     }
 
     // Prepare data for insertion into the database
-    const { customerId, } = validatedFields.data;
+    const { customerId, email} = validatedFields.data;
     
     // Insert data into the database
     try {
