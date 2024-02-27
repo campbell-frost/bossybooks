@@ -140,7 +140,7 @@ export async function addCustomer(prevState: State, formData: FormData) {
     // Insert data into the database
     try {
         await sql`
-      INSERT INTO customers (customerId, email,)
+      INSERT INTO customers (id, email,)
       VALUES (${customerId}, ${email})
     `;
     } catch (error) {
