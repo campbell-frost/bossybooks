@@ -20,10 +20,11 @@ export default async function CustomersPage({
        
         <><Suspense fallback={<p>Loading...</p>}>
             <CustomersTableType query={query} />
+            <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
+                <AddCustomer />
+            </div>
         </Suspense>
         
-        <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
-                <AddCustomer />
-            </div></>
+        </>
     )
 }

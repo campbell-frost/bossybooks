@@ -28,6 +28,7 @@ export type State = {
         amount?: string[];
         status?: string[];
        
+       
         
     };
     message?: string | null;
@@ -139,13 +140,14 @@ export async function addCustomer(prevState: State, formData: FormData) {
 
     // Prepare data for insertion into the database
     const {customerId} = validatedFields.data;
+    const {id} = validatedFields.data;
     
     
     // Insert data into the database
     try {
         await sql`
       INSERT INTO customers (name, email)
-      VALUES (${customerId})
+      VALUES (${id},${customerId})
     `;
     } catch (error) {
         // If a database error occurs, return a more specific error.
