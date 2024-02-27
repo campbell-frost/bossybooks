@@ -13,8 +13,8 @@ import { addCustomer } from '@/app/lib/actions';
   const [state, dispatch] = useFormState(addCustomer, initialState);
 
 
-return (
-<form className="w-full max-w-lg">
+return (<form action={dispatch}>
+<div className="w-full max-w-lg">
     <div className="flex-wrap -mx-3 mb-6">
         <div className=" w-full md: w/1/2 px-3 md:mb-0">
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-extrabold mb-2"/>
@@ -42,7 +42,7 @@ return (
       </Link>
   <Button type="submit">Add Customer </Button>
   </div>
-  
+  </div>
   </form>
   
 );
