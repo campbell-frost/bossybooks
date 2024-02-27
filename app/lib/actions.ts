@@ -17,7 +17,7 @@ const FormSchema = z.object({
         invalid_type_error: 'Please select an invoice status.',
     }),
     date: z.string(),
-    email:z.string(),
+
     
 
 });
@@ -122,7 +122,7 @@ export async function deleteInvoice(id: string) {
 export async function addCustomer(prevState: State, formData: FormData) {
     // Validate form using Zod
     const validatedFields = AddCustomer.safeParse({
-        name: formData.get('name'),
+        customerId: formData.get('customerId'),
         
         
     });
@@ -136,13 +136,13 @@ export async function addCustomer(prevState: State, formData: FormData) {
     }
 
     // Prepare data for insertion into the database
-    const {customerId, email} = validatedFields.data;
+    const {customerId} = validatedFields.data;
     
     // Insert data into the database
     try {
         await sql`
-      INSERT INTO customers (name, email,)
-      VALUES (${email})
+      INSERT INTO customers (customer)
+      VALUES (${customerId})
     `;
     } catch (error) {
         // If a database error occurs, return a more specific error.
