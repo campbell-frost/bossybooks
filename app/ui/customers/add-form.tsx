@@ -25,7 +25,7 @@ return (
   </div>
   <div className="flex flex-wrap -mx-3 mb-6">
     <div className="w-full md: w/1/2 px-3 md: mb-0">
-    <label className="block uppercase tracking-wide text-gray-700 text-xs font-semibold mb-2" htmlFor="grid-last-name">
+    <label className="block uppercase tracking-wide text-gray-700 text-xs font-medium mb-2" htmlFor="grid-last-name">
         Email 
       </label>
       <input 
