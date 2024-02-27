@@ -18,13 +18,14 @@ const FormSchema = z.object({
     }),
     date: z.string(),
     email:z.string(),
+
 });
 export type State = {
     errors?: {
         customerId?: string[];
         amount?: string[];
         status?: string[];
-        id
+        
     };
     message?: string | null;
 };
@@ -134,13 +135,13 @@ export async function addCustomer(prevState: State, formData: FormData) {
     }
 
     // Prepare data for insertion into the database
-    const { id, email} = validatedFields.data;
+    const {customerId, email} = validatedFields.data;
     
     // Insert data into the database
     try {
         await sql`
       INSERT INTO customers (name, email,)
-      VALUES (${id, email})
+      VALUES (${customerId}, ${email})
     `;
     } catch (error) {
         // If a database error occurs, return a more specific error.
