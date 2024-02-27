@@ -134,7 +134,7 @@ export async function addCustomer(prevState: State, formData: FormData) {
     }
 
     // Prepare data for insertion into the database
-    const { customerId } = validatedFields.data;
+    const { customerId, } = validatedFields.data;
     
     // Insert data into the database
     try {
