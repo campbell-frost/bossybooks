@@ -24,6 +24,7 @@ export type State = {
         customerId?: string[];
         amount?: string[];
         status?: string[];
+        id
     };
     message?: string | null;
 };
@@ -119,10 +120,8 @@ export async function deleteInvoice(id: string) {
 export async function addCustomer(prevState: State, formData: FormData) {
     // Validate form using Zod
     const validatedFields = AddCustomer.safeParse({
-        customerId: formData.get('customerId'),
-        amount: formData.get('amount'),
-        status: formData.get('status'),
-       
+        name: formData.get('name'),
+        
         
     });
 
@@ -135,13 +134,13 @@ export async function addCustomer(prevState: State, formData: FormData) {
     }
 
     // Prepare data for insertion into the database
-    const { customerId, email} = validatedFields.data;
+    const { id, email} = validatedFields.data;
     
     // Insert data into the database
     try {
         await sql`
-      INSERT INTO customers (name, email, total_paid, total_invoices, total_pending )
-      VALUES (${customerId})
+      INSERT INTO customers (name, email,)
+      VALUES (${id, email})
     `;
     } catch (error) {
         // If a database error occurs, return a more specific error.
