@@ -17,6 +17,8 @@ const FormSchema = z.object({
         invalid_type_error: 'Please select an invoice status.',
     }),
     date: z.string(),
+    email: z.string(),
+    name: z.string(),
 
     
 
@@ -26,6 +28,8 @@ export type State = {
         customerId?: string[];
         amount?: string[];
         status?: string[];
+        email?: string[];
+        name?: string[];
         
     };
     message?: string | null;
@@ -136,13 +140,15 @@ export async function addCustomer(prevState: State, formData: FormData) {
     }
 
     // Prepare data for insertion into the database
-    const {customerId} = validatedFields.data;
+    const {name} = validatedFields.data;
+    const {email} = validatedFields.data;
+    
     
     // Insert data into the database
     try {
         await sql`
-      INSERT INTO customers (customer)
-      VALUES (${customerId})
+      INSERT INTO customers (name, email)
+      VALUES (${name}, ${email})
     `;
     } catch (error) {
         // If a database error occurs, return a more specific error.
