@@ -140,14 +140,14 @@ export async function addCustomer(prevState: State, formData: FormData) {
 
     // Prepare data for insertion into the database
     const {customerId} = validatedFields.data;
-    const {id} = validatedFields.data;
+   
     
     
     // Insert data into the database
     try {
         await sql`
-      INSERT INTO customers (name, email)
-      VALUES (${id},${customerId})
+      INSERT INTO customers (customer_id)
+      VALUES (${customerId})
     `;
     } catch (error) {
         // If a database error occurs, return a more specific error.
