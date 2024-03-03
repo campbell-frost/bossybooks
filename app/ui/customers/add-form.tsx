@@ -4,13 +4,13 @@ import { CustomerField } from '@/app/lib/definitions';
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { useFormState } from 'react-dom';
-import { addCustomer } from '@/app/lib/actions';
+import { createCustomer } from '@/app/lib/customers-actions';
 
 
   export default function AddCustomerForm({customers}: {customers: CustomerField[]}){
 
     const initialState = { message: null, errors: {} };
-  const [state, dispatch] = useFormState(addCustomer, initialState);
+  const [state, dispatch] = useFormState(createCustomer, initialState);
 
 
 return (<form action={dispatch}>
@@ -20,9 +20,10 @@ return (<form action={dispatch}>
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-extrabold mb-2"/>
             Customer Name
             <label/>
-            <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:border-bg-pink-600" 
+            <input className="appearance-none block w-full gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:border-bg-pink-600" 
             id="name"
-             type="name1"
+             type="name"
+             name="name"
               placeholder="Enter customer full name"></input>
         </div>
   </div>
@@ -32,9 +33,10 @@ return (<form action={dispatch}>
         Email 
       </label>
       <input 
-      className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none  focus:border-bg-pink-600" 
+      className="appearance-none block w-full gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none  focus:border-bg-pink-600" 
       id="email"
-       type="email1" 
+       type="email" 
+       name ="email"
        placeholder="Enter email address"/>
     </div>
     </div>
@@ -42,14 +44,14 @@ return (<form action={dispatch}>
     <Link
         href="/dashboard/customers/
         "
-        className="flex h-10 items-center rounded-sm bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
+        className="flex h-10 items-center rounded-sm gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
       >
         Cancel
       </Link>
   <Button type="submit">Add Customer </Button>
   </div>
   </div>
-  </form>
+ </form>
   
 );
 }
