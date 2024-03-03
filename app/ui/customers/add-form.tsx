@@ -7,7 +7,7 @@ import { useFormState } from 'react-dom';
 import { createCustomer } from '@/app/lib/customers-actions';
 
 
-  export default function AddCustomerForm({customers}: {customers: CustomerField[]}){
+export default function AddCustomerForm({ customers }: { customers: CustomerField[] }) {
 
     const initialState = { message: null, errors: {} };
   const [state, dispatch] = useFormState(createCustomer, initialState);
@@ -54,4 +54,5 @@ return (<form action={dispatch}>
  </form>
   
 );
+  
 }
