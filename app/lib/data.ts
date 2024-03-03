@@ -168,16 +168,13 @@ export async function fetchInvoiceById(id: string) {
   }
 }
 
-export async function fetchCustomers(query: string) {
+export async function fetchCustomers() {
   try {
     const data = await sql<CustomerField>`
       SELECT
         id,
         name
       FROM customers
-      WHERE
-      customers.name ILIKE ${`%${query}%`} OR
-      customers.email ILIKE ${`%${query}%`}
       ORDER BY name ASC
     `;
 
@@ -186,6 +183,24 @@ export async function fetchCustomers(query: string) {
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch all customers.');
+  }
+}
+
+export async function countCustomers(query: string) {
+  noStore();
+  try {
+    const count = await sql`SELECT COUNT(*)
+    FROM customers
+    WHERE
+      customers.name ILIKE ${`%${query}%`} OR
+      customers.email ILIKE ${`%${query}%`} 
+  `;
+
+    const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
+    return totalPages;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch total number of customers.');
   }
 }
 
