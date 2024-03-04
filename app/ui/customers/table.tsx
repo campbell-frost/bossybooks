@@ -77,35 +77,35 @@ export default async function CustomersTable({
                       Total Paid
                     </th>
                     <th scope="col" className="px-4 py-5 font-medium">
-                      Edit / Delete
                     </th>
-                
+
                   </tr>
                 </thead>
 
                 <tbody className="divide-y divide-gray-200 text-gray-900">
                   {customers.map((customer) => (
                     <tr key={customer.id} className="group">
-                      <td className="whitespace-nowrap bg-white py-5 pl-4 pr-3 text-sm text-black group-first-of-type:rounded-md group-last-of-type:rounded-md sm:pl-6">
+                      
+                      <td className="bg-white whitespace-nowrap py-3 pl-6 pr-3">
                         <div className="flex items-center gap-3">
 
                           <p>{customer.name}</p>
                         </div>
                       </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
+                      <td className="bg-white whitespace-nowrap px-3 py-3">
                         {customer.email}
                       </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
+                      <td className="bg-white whitespace-nowrap px-3 py-3">
                         {customer.total_invoices}
                       </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
+                      <td className="bg-white whitespace-nowrap px-3 py-3">
                         {customer.total_pending}
                       </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
+                      <td className="bg-white whitespace-nowrap px-3 py-3">
                         {customer.total_paid}
                       </td>
-                      <td className="bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
-                        <div className="flex gap-3">
+                      <td className="bg-white whitespace-nowrap py-3 pl-6 pr-3">
+                        <div className="flex justify-end gap-3">
                           <UpdateCustomer id={customer.id} />
                           <DeleteCustomer id={customer.id} />
                         </div>
