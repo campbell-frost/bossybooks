@@ -1,3 +1,5 @@
+'use client'
+
 import { lusitana } from '@/app/ui/fonts';
 import {
   AtSymbolIcon,
@@ -7,10 +9,13 @@ import {
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './button';
 import Link from 'next/link';
+import { useFormState, useFormStatus } from 'react-dom';
+import { authenticate } from '@/app/lib/actions';
 
 export default function LoginForm() {
+  const [errorMessage, dispatch] = useFormState(authenticate, undefined);
   return (
-    <form className="space-y-3">
+    <form action={dispatch} className="space-y-3">
       <div className="flex-1 px-6 pb-4 pt-4">
 
         <div className="w-full">
@@ -71,6 +76,7 @@ export default function LoginForm() {
           </div>
         </div>
         <LoginButton />
+        
         <div className="flex items-center justify-between mt-8">
           <div className="flex items-center">
 
@@ -84,8 +90,17 @@ export default function LoginForm() {
             </Link>
           </ div>
         </div>
-        <div className="flex h-8 items-end space-x-1">
-          {/* Add form errors here */}
+        <div
+          className="flex h-8 items-end space-x-1"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {errorMessage && (
+            <>
+              <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
+              <p className="text-sm text-red-500">{errorMessage}</p>
+            </>
+          )}
         </div>
       </div>
     </form>
@@ -93,11 +108,10 @@ export default function LoginForm() {
 }
 
 function LoginButton() {
+  const { pending } = useFormStatus();
   return (
-    <Link href="dashboard">
-      <Button className="mt-4 w-full">
+      <Button className="mt-4 w-full" aria-disabled={pending}>
         Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
       </Button>
-    </Link>
   );
 }
