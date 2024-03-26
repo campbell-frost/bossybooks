@@ -25,8 +25,8 @@ export default function Page() {
       </div>
       <div className="">
         <div className="mt-4 grow md:flex-rowflex justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10  md:px-20">
-          <p className={`${inter.className} text-xl text-gray-800 md:text-3xl md:leading-normal mb-5`}>
-            Welcome to<strong> Bossy Books.</strong>
+          <p className={`${inter.className} text-xl pink-700 md:text-3xl md:leading-normal mb-5`}>
+            Welcome to <strong> Bossy Books.</strong>
           </p>
           <Link
             href="/login"
