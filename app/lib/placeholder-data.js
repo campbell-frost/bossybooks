@@ -2,11 +2,18 @@
 // https://nextjs.org/learn/dashboard-app/fetching-data
 const users = [
   {
-    id: '410544b2-4001-4271-9855-fec4b6a6442a',
-    name: 'User',
-    email: 'user@nextmail.com',
-    password: '123456',
+    id: 'c058a80f-9a57-46e7-a1bb-35a175a16bca', 
+    name: 'Campbell',
+    email: 'campbellsfrost@gmail.com',
+    password: 'admin1' // This will be hashed before insertion
   },
+  {
+    id: '9a29a14c-7e2b-4fb3-b18c-5d7a3a2e9f36',
+    name: 'Brianna',
+    email: 'Brianna.carmichael1@icloud.com',
+    password: 'Bsc484**'
+  }
+
 ];
 
 const customers = [

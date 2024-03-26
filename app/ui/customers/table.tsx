@@ -1,19 +1,24 @@
 import Image from 'next/image';
 import { inter } from '@/app/ui/fonts';
 import Search from '@/app/ui/search';
+import { UpdateCustomer, DeleteCustomer } from '@/app/ui/customers/buttons';
+
 import { CustomersTableType, FormattedCustomersTable } from '@/app/lib/definitions';
 import { fetchFilteredCustomers } from '@/app/lib/data';
 
-export default async function CustomersTable({ query }: { query: string }) {
+export default async function CustomersTable({
+  query,
+  currentPage,
+}: {
+  query: string;
+  currentPage: number;
+}) {
 
   const customers: FormattedCustomersTable[] = await fetchFilteredCustomers(query)
 
   return (
     <div className="w-full">
-      <h1 className={`${inter.className} mb-8 text-xl md:text-2xl`}>
-        Customers
-      </h1>
-      <Search placeholder="Search customers..." />
+
       <div className="mt-6 flow-root">
         <div className="overflow-x-auto">
           <div className="inline-block min-w-full align-middle">
@@ -28,7 +33,7 @@ export default async function CustomersTable({ query }: { query: string }) {
                       <div>
                         <div className="mb-2 flex items-center">
                           <div className="flex items-center gap-3">
-                          
+
                             <p>{customer.name}</p>
                           </div>
                         </div>
@@ -71,29 +76,39 @@ export default async function CustomersTable({ query }: { query: string }) {
                     <th scope="col" className="px-4 py-5 font-medium">
                       Total Paid
                     </th>
+                    <th scope="col" className="px-4 py-5 font-medium">
+                    </th>
+
                   </tr>
                 </thead>
 
                 <tbody className="divide-y divide-gray-200 text-gray-900">
                   {customers.map((customer) => (
                     <tr key={customer.id} className="group">
-                      <td className="whitespace-nowrap bg-white py-5 pl-4 pr-3 text-sm text-black group-first-of-type:rounded-md group-last-of-type:rounded-md sm:pl-6">
+                      
+                      <td className="bg-white whitespace-nowrap py-3 pl-6 pr-3">
                         <div className="flex items-center gap-3">
-                     
+
                           <p>{customer.name}</p>
                         </div>
                       </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
+                      <td className="bg-white whitespace-nowrap px-3 py-3">
                         {customer.email}
                       </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
+                      <td className="bg-white whitespace-nowrap px-3 py-3">
                         {customer.total_invoices}
                       </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
+                      <td className="bg-white whitespace-nowrap px-3 py-3">
                         {customer.total_pending}
                       </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
+                      <td className="bg-white whitespace-nowrap px-3 py-3">
                         {customer.total_paid}
+                      </td>
+                      <td className="bg-white whitespace-nowrap py-3 pl-6 pr-3">
+                        <div className="flex justify-end gap-3">
+                          <UpdateCustomer id={customer.id} />
+                          <DeleteCustomer id={customer.id} />
+                        </div>
                       </td>
                     </tr>
                   ))}
