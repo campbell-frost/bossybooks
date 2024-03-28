@@ -1,6 +1,4 @@
 'use client'
-
-import { lusitana } from '@/app/ui/fonts';
 import {
   AtSymbolIcon,
   KeyIcon,
@@ -8,16 +6,14 @@ import {
 } from '@heroicons/react/24/outline';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './button';
-import Link from 'next/link';
 import { useFormState, useFormStatus } from 'react-dom';
 import { authenticate } from '@/app/lib/actions';
 
 export default function LoginForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
   return (
-    <form action={dispatch} className="space-y-3">
-      <div className="flex-1 px-6 pb-4 pt-4">
-
+    <form action={dispatch} className="mb-3">
+       <div className="px-6 pb-4 pt-4 sm:px-4 lg:px-6">
         <div className="w-full">
           <div>
             <label
@@ -58,37 +54,9 @@ export default function LoginForm() {
               <KeyIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
           </div>
-          <div className="flex items-center justify-between my-8">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                id="rememberMe"
-                name="rememberMe"
-                className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
-              />
-              <span className="ml-2 block text-sm text-gray-900">Remember Me</span>
-            </label>
-            <div className="text-sm">
-              <a href="#" className=" text-pink-600 hover:underline">
-                Forgot password?
-              </a>
-            </div>
-          </div>
         </div>
-        <LoginButton />
-        
-        <div className="flex items-center justify-between mt-8">
-          <div className="flex items-center">
-
-            <p>
-              Dont have an account?
-            </p>
-          </div>
-          <div className="text-sm">
-            <Link href="/register" className="text-pink-600 hover:underline">
-              Register
-            </Link>
-          </ div>
+        <div className="mt-10">
+          <LoginButton />
         </div>
         <div
           className="flex h-8 items-end space-x-1"
@@ -110,8 +78,8 @@ export default function LoginForm() {
 function LoginButton() {
   const { pending } = useFormStatus();
   return (
-      <Button className="mt-4 w-full" aria-disabled={pending}>
-        Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
-      </Button>
+    <Button className="mt-4 w-full" aria-disabled={pending}>
+      Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+    </Button>
   );
 }
