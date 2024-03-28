@@ -5,12 +5,12 @@ const users = [
     id: 'c058a80f-9a57-46e7-a1bb-35a175a16bca', 
     name: 'Campbell',
     email: 'campbellsfrost@gmail.com',
-    password: 'admin1' // This will be hashed before insertion
+    password: 'admin1' 
   },
   {
     id: '9a29a14c-7e2b-4fb3-b18c-5d7a3a2e9f36',
     name: 'Brianna',
-    email: 'Brianna.carmichael1@icloud.com',
+    email: 'brianna.carmichael1@icloud.com',
     password: 'Bsc484**'
   }
 
