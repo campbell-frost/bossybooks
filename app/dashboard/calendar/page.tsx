@@ -104,7 +104,7 @@ export default function Calendar() {
   return (
     <>
       
-        <h1 className="font-medium text-2xl text-black">Calendar</h1>
+      <h1 className="font-medium text-2xl text-black">Calendar</h1>
       
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="grid grid-cols-10">
