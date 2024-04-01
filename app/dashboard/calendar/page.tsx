@@ -7,10 +7,6 @@ import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon, ExclamationTriangleIcon } from '@heroicons/react/20/solid'
 import { EventSourceInput } from '@fullcalendar/core/index.js'
-import { inter } from '@/app/ui/fonts';
-
-
-
 
 
 interface Event {
@@ -111,6 +107,9 @@ export default function Calendar() {
 
   return (
     <>
+    
+    <h1 className="font-medium text-2xl text-black">Calendar</h1>
+    
       <div className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="grid grid-cols-10">
           <div className="col-span-8">
@@ -286,7 +285,7 @@ export default function Calendar() {
             </div>
           </Dialog>
         </Transition.Root>
-      </main >
+      </div >
     </>
   )
 }
