@@ -7,9 +7,11 @@ import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon, ExclamationTriangleIcon } from '@heroicons/react/20/solid'
 import { EventSourceInput } from '@fullcalendar/core/index.js'
+import { inter } from '@/app/ui/fonts';
 
 
-import { lusitana } from '@/app/ui/fonts';
+
+
 
 interface Event {
     title: string;
@@ -19,14 +21,8 @@ interface Event {
   }
   
 
-export default function Home() {
-  const [events, setEvents] = useState([
-    { title: 'event 1', id: '1' },
-    { title: 'event 2', id: '2' },
-    { title: 'event 3', id: '3' },
-    { title: 'event 4', id: '4' },
-    { title: 'event 5', id: '5' },
-  ])
+export default function Calendar() {
+
   const [allEvents, setAllEvents] = useState<Event[]>([])
   const [showModal, setShowModal] = useState(false)
   const [showDeleteModal, setShowDeleteModal] = useState(false)
@@ -107,10 +103,9 @@ export default function Home() {
 
   return (
     <>
-      
-        <h1 className="font-medium text-2xl text-black">Calendar</h1>
-      
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    
+     <h1 className={`${inter.className} text-2xl`}>Calendar</h1>
+      <div className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="grid grid-cols-10">
           <div className="col-span-8">
             <FullCalendar
@@ -122,7 +117,7 @@ export default function Home() {
               headerToolbar={{
                 left: 'prev,next today',
                 center: 'title',
-                right: 'resourceTimelineWook, dayGridMonth,timeGridWeek'
+                right: 'dayGridMonth,timeGridWeek'
               }}
               events={allEvents as EventSourceInput}
               nowIndicator={true}
@@ -176,7 +171,7 @@ export default function Home() {
                           <ExclamationTriangleIcon className="h-6 w-6 text-red-600" aria-hidden="true" />
                         </div>
                         <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                          <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
+                          <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900 mx-60 px-30">
                             Delete Event
                           </Dialog.Title>
                           <div className="mt-2">
@@ -241,14 +236,14 @@ export default function Home() {
                         </Dialog.Title>
                         <form action="submit" onSubmit={handleSubmit}>
                           <div className="mt-2">
-                            <input type="text" name="title" className="block w-full rounded-md border-0 py-1.5 text-gray-900 
-                            shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
+                            <input type="text" name="title" className="block w-full rounded-md border-0 py-1.5 text-white-900 
+                            shadow-sm ring-1 ring-inset ring-pink-300 placeholder:text-pink-400 
                             focus:ring-2 
                             focus:ring-inset focus:ring-gray-400
                             sm:text-sm sm:leading-6"
                               value={newEvent.title} onChange={(e) => handleChange(e)} placeholder="Title" />
                           </div>
-                          <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
+                          <div className="mt-5 mx-20 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
                             <button
                               type="submit"
                               className="inline-flex w-full justify-center rounded-md bg-pink-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-pink-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600 sm:col-start-2 disabled:opacity-25"
@@ -274,7 +269,8 @@ export default function Home() {
             </div>
           </Dialog>
         </Transition.Root>
-      </main >
+      </div >
+      
     </>
   )
 }
