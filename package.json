@@ -10,6 +10,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.11",
+    "@fullcalendar/daygrid": "^6.1.11",
+    "@fullcalendar/interaction": "^6.1.11",
+    "@fullcalendar/react": "^6.1.11",
+    "@fullcalendar/timegrid": "^6.1.11",
+    "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.0.18",
     "@tailwindcss/forms": "^0.5.7",
     "@types/node": "20.5.7",
@@ -18,8 +24,9 @@
     "autoprefixer": "10.4.15",
     "bcrypt": "^5.1.1",
     "clsx": "^2.0.0",
+    "css-loader": "^6.10.0",
     "dayjs": "^1.11.10",
-    "next": "^14.0.2",
+    "next": "^14.1.4",
     "next-auth": "^5.0.0-beta.15",
     "postcss": "8.4.31",
     "react": "18.2.0",
