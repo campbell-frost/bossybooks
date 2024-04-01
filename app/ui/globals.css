@@ -38,7 +38,7 @@ input {
 }
 
 .fc .fc-button{
-  @apply bg-violet-800 hover:bg-pink-400  ;
+  @apply bg-pink-600 hover:bg-pink-400  ;
 }
 
 .fc .fc-button-primary:not(:disabled).fc-button-active {
